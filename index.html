@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Monesh's Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      background: #f0f4f8;
+      color: #333;
+      line-height: 1.6;
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    h1, h2, h3 {
+      color: #1e3a8a;
+      margin-bottom: 10px;
+    }
+    header {
+      text-align: center;
+      padding-bottom: 30px;
+      animation: fadeIn 1s ease-in;
+    }
+    .profile-pic {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #06b6d4;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+    .profile-pic:hover {
+      transform: scale(1.05);
+    }
+    header h1 {
+      font-size: 2.8rem;
+      margin-top: 15px;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: #555;
+      font-style: italic;
+    }
+    section {
+      background: white;
+      padding: 25px 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      margin-bottom: 30px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: fadeIn 1.2s ease-in-out;
+    }
+    section:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    }
+    #skills ul, #certificates ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    #skills li {
+      background: #06b6d4;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      display: inline-block;
+      margin: 5px;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+    #skills li:hover {
+      background: #0891b2;
+    }
+    #certificates li {
+      background: #e0f7ff;
+      border-left: 5px solid #06b6d4;
+      margin-bottom: 12px;
+      padding: 12px 15px;
+      font-weight: 500;
+      transition: background 0.3s ease;
+    }
+    #certificates li:hover {
+      background-color: #ccf2ff;
+    }
+    #contact input, #contact textarea {
+      padding: 10px;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+      resize: vertical;
+      width: 100%;
+    }
+    #contact input:focus, #contact textarea:focus {
+      border-color: #06b6d4;
+      outline: none;
+    }
+    #contact button {
+      background: #06b6d4;
+      color: white;
+      padding: 12px;
+      font-weight: 700;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: background 0.3s ease;
+    }
+    #contact button:hover {
+      background: #0891b2;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #777;
+      margin-top: 40px;
+    }
+    pre {
+      background: #f4f6f9;
+      padding: 15px;
+      border-left: 5px solid #06b6d4;
+      overflow-x: auto;
+      margin-bottom: 10px;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="images/profile.jpg" alt="Monesh Profile Picture" class="profile-pic">
+    <h1>Monesh</h1>
+    <p>Data Scientist | Machine Learning Enthusiast | Problem Solver</p>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I'm a passionate data science undergraduate student with strong interest in machine learning and real-world problem solving. I enjoy building clean, interpretable models and dashboards that support data-driven decisions.</p>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <ul>
+      <li><strong>B.Tech - Artificial Intelligence and Data Science</strong>, XYZ College (2022–2026)</li>
+      <li>Top 5% in NPTEL Python for Data Science (Silver Badge)</li>
+    </ul>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <ul>
+      <li><strong>KNN vs Logistic Regression Accuracy Analysis</strong> – Compared models using accuracy plots and confusion matrices (GitHub linked).</li>
+      <li><strong>Air Pollution Prediction with LSTM & XGBoost</strong> – Time series forecasting using separate ML models.</li>
+      <li><strong>Cloud File Manager with Google Drive API</strong> – Built using Flask and Google Cloud Services.</li>
+    </ul>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li>Python</li>
+      <li>Pandas</li>
+      <li>NumPy</li>
+      <li>Matplotlib</li>
+      <li>Scikit-Learn</li>
+      <li>XGBoost</li>
+      <li>LSTM</li>
+      <li>Flask</li>
+      <li>HTML/CSS</li>
+    </ul>
+  </section>
+
+  <section id="certificates">
+    <h2>Certificates</h2>
+    <ul>
+      <li>Python for Data Science - NPTEL (Silver Badge)</li>
+      <li>Machine Learning A-Z - Udemy</li>
+      <li>Deep Learning Specialization - Coursera</li>
+      <li>Complete Data Science Bootcamp - Udemy</li>
+      <li>AI for Everyone - Coursera</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form action="mailto:your-email@example.com" method="post" enctype="text/plain">
+      <label for="name">Name:</label><br>
+      <input type="text" id="name" name="name" required><br><br>
+
+      <label for="email">Email:</label><br>
+      <input type="email" id="email" name="email" required><br><br>
+
+      <label for="message">Message:</label><br>
+      <textarea id="message" name="message" rows="5" required></textarea><br><br>
+
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2025 Monesh. All rights reserved.
+  </footer>
+</body>
+</html>
