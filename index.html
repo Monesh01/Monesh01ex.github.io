@@ -4,17 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Monesh's Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0; padding: 0; box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
-    html {
-      scroll-behavior: smooth;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
     body {
-      background: #f0f4f8;
+      background: #f5f7fa;
       color: #333;
       line-height: 1.6;
       padding: 20px;
@@ -22,29 +18,18 @@
       margin: auto;
     }
     h1, h2, h3 {
-      color: #1e3a8a;
+      color: #222;
       margin-bottom: 10px;
     }
     header {
       text-align: center;
       padding-bottom: 30px;
-      animation: fadeIn 1s ease-in;
-    }
-    .profile-pic {
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid #06b6d4;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-      transition: transform 0.3s ease;
-    }
-    .profile-pic:hover {
-      transform: scale(1.05);
     }
     header h1 {
-      font-size: 2.8rem;
-      margin-top: 15px;
+      font-size: 3rem;
+      margin-bottom: 8px;
+      color: #2c3e50;
+      letter-spacing: 2px;
     }
     header p {
       font-size: 1.2rem;
@@ -54,43 +39,75 @@
     section {
       background: white;
       padding: 25px 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
       margin-bottom: 30px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      animation: fadeIn 1.2s ease-in-out;
+      transition: box-shadow 0.3s ease;
     }
     section:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 8px 20px rgb(0 0 0 / 0.15);
     }
-    #skills ul, #certificates ul {
+    p, ul, li {
+      font-size: 1.1rem;
+      color: #444;
+      line-height: 1.6;
+    }
+    ul {
+      padding-left: 20px;
+      margin-top: 10px;
+    }
+    li {
+      margin-bottom: 8px;
+    }
+    #skills ul {
       list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
       padding-left: 0;
+      margin-top: 12px;
     }
     #skills li {
-      background: #06b6d4;
+      background: #3498db;
       color: white;
       padding: 8px 16px;
       border-radius: 20px;
-      display: inline-block;
-      margin: 5px;
       font-weight: 600;
-      transition: background 0.3s ease;
+      box-shadow: 0 2px 5px rgb(52 152 219 / 0.5);
+      user-select: none;
+      cursor: default;
+      transition: background-color 0.3s ease;
     }
     #skills li:hover {
-      background: #0891b2;
+      background: #2980b9;
+    }
+    #certificates ul {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 12px;
     }
     #certificates li {
-      background: #e0f7ff;
-      border-left: 5px solid #06b6d4;
+      background: #e8f0fe;
+      border-left: 5px solid #4285f4;
       margin-bottom: 12px;
       padding: 12px 15px;
       font-weight: 500;
-      transition: background 0.3s ease;
+      color: #333;
+      box-shadow: 0 2px 5px rgb(66 133 244 / 0.2);
+      cursor: default;
+      transition: background-color 0.25s ease;
     }
     #certificates li:hover {
-      background-color: #ccf2ff;
+      background-color: #d2e3fc;
+    }
+    #contact form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    #contact label {
+      font-weight: 600;
+      color: #222;
     }
     #contact input, #contact textarea {
       padding: 10px;
@@ -98,118 +115,199 @@
       border-radius: 5px;
       font-size: 1rem;
       resize: vertical;
-      width: 100%;
+      transition: border-color 0.3s ease;
     }
     #contact input:focus, #contact textarea:focus {
-      border-color: #06b6d4;
+      border-color: #3498db;
       outline: none;
     }
     #contact button {
-      background: #06b6d4;
+      background: #3498db;
       color: white;
       padding: 12px;
       font-weight: 700;
       border: none;
       border-radius: 6px;
       cursor: pointer;
+      transition: background-color 0.3s ease;
       font-size: 1.1rem;
-      transition: background 0.3s ease;
     }
     #contact button:hover {
-      background: #0891b2;
+      background: #2980b9;
     }
     footer {
       text-align: center;
       font-size: 0.9rem;
       color: #777;
       margin-top: 40px;
+      user-select: none;
     }
     pre {
       background: #f4f6f9;
       padding: 15px;
-      border-left: 5px solid #06b6d4;
+      border-left: 5px solid #3498db;
+      font-family: monospace;
       overflow-x: auto;
       margin-bottom: 10px;
     }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    @media (max-width: 600px) {
+      body {
+        padding: 15px;
+      }
+      header h1 {
+        font-size: 2.2rem;
+      }
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="images/profile.jpg" alt="Monesh Profile Picture" class="profile-pic">
     <h1>Monesh</h1>
     <p>Data Scientist | Machine Learning Enthusiast | Problem Solver</p>
   </header>
 
   <section id="about">
     <h2>About Me</h2>
-    <p>I'm a passionate data science undergraduate student with strong interest in machine learning and real-world problem solving. I enjoy building clean, interpretable models and dashboards that support data-driven decisions.</p>
+    <p>Hello! I'm Monesh, a passionate data scientist with a strong background in machine learning, deep learning, and data analysis. I love transforming raw data into meaningful insights and solving challenging problems through data-driven solutions.</p>
+  </section>
+
+  <section id="professional-summary">
+    <h2>Professional Summary</h2>
+    <p>Dedicated and curious third-year B.Tech student in Artificial Intelligence and Data Science with a strong interest in machine learning and data-driven problem solving. Currently indulging in and consistently improving my skills in machine learning, Python, and data analytics through academic projects, self-learning, and hands-on experimentation. Passionate about understanding global challenges and applying data science techniques to develop practical, impactful solutions. Eager to join innovative teams where I can continuously learn, grow, and contribute meaningfully to the evolving field of data science.</p>
   </section>
 
   <section id="education">
     <h2>Education</h2>
-    <ul>
-      <li><strong>B.Tech - Artificial Intelligence and Data Science</strong>, XYZ College (2022–2026)</li>
-      <li>Top 5% in NPTEL Python for Data Science (Silver Badge)</li>
-    </ul>
+    <h3>Higher Secondary Education</h3>
+    <p><strong>KSR Matric Hr Sec School, Thirupathur, Tamil Nadu, India</strong><br>Completed: 2023<br>Stream: Computer Science<br>Percentage: 93%</p>
+    <h3>B.Tech in Artificial Intelligence and Data Science</h3>
+    <p><strong>SIMATS Engineering, Chennai, India</strong><br>2023 – 2027 (Pursuing)<br>CGPA: 9.17 / 10<br>Highlight: Top 5% in NPTEL “Python for Data Science” – Silver Badge<br>Domain of Interest: Data Science</p>
   </section>
 
   <section id="projects">
     <h2>Projects</h2>
+    <h3>Project 1: Air Pollution Prediction</h3>
     <ul>
-      <li><strong>KNN vs Logistic Regression Accuracy Analysis</strong> – Compared models using accuracy plots and confusion matrices (GitHub linked).</li>
-      <li><strong>Air Pollution Prediction with LSTM & XGBoost</strong> – Time series forecasting using separate ML models.</li>
-      <li><strong>Cloud File Manager with Google Drive API</strong> – Built using Flask and Google Cloud Services.</li>
+      <li><strong>Description:</strong> Developed a predictive model for Air Quality Index (AQI) using XGBoost, and Linear Regression.</li>
+      <li><strong>Technologies:</strong> Python, Jupyter Notebook, TensorFlow, scikit-learn</li>
+      <li><strong>Role:</strong> Collected data from Kaggle, performed preprocessing and feature engineering, and implemented multiple machine learning models for comparative analysis.</li>
+    </ul>
+  </section>
+
+  <section id="model-comparison">
+    <h2>Project 2: Model Comparison for Anemia Classification</h2>
+    <ul>
+      <li><strong>Description:</strong> Developed and compared K-Nearest Neighbors and Logistic Regression to predict anemia based on health features.</li>
+      <li><strong>Goal:</strong> Identify the most accurate and reliable classification model for anemia prediction.</li>
+      <li><strong>Technologies:</strong> Python, scikit-learn, Matplotlib, Seaborn, Jupyter Notebook</li>
+      <li><strong>Performance:</strong></li>
+      <ul>
+        <li>KNN Accuracy (Test): 98.94%</li>
+        <li>Logistic Regression Accuracy (Test): 99.298%</li>
+      </ul>
+      <li><strong>Confusion Matrices (Text View):</strong></li>
+      <pre id="knn-matrix">Loading KNN matrix...</pre>
+      <pre id="logreg-matrix">Loading Logistic Regression matrix...</pre>
+      <li><strong>Accuracy Comparison Plot:</strong></li>
+      <p><img src="images/accuracy_comparison.png" alt="Accuracy Comparison Plot" style="width:600px;margin-top:15px;" /></p>
     </ul>
   </section>
 
   <section id="skills">
     <h2>Skills</h2>
     <ul>
-      <li>Python</li>
-      <li>Pandas</li>
-      <li>NumPy</li>
-      <li>Matplotlib</li>
-      <li>Scikit-Learn</li>
-      <li>XGBoost</li>
-      <li>LSTM</li>
-      <li>Flask</li>
-      <li>HTML/CSS</li>
+      <li>Python</li><li>R</li><li>SQL</li><li>Machine Learning</li><li>Deep Learning</li>
+      <li>Data Visualization</li><li>Pandas</li><li>NumPy</li><li>Scikit-learn</li>
+      <li>TensorFlow</li><li>Jupyter Notebook</li><li>Spyder</li><li>RStudio</li>
     </ul>
   </section>
 
   <section id="certificates">
     <h2>Certificates</h2>
-    <ul>
-      <li>Python for Data Science - NPTEL (Silver Badge)</li>
-      <li>Machine Learning A-Z - Udemy</li>
-      <li>Deep Learning Specialization - Coursera</li>
-      <li>Complete Data Science Bootcamp - Udemy</li>
-      <li>AI for Everyone - Coursera</li>
-    </ul>
+    <ul id="cert-list"></ul>
   </section>
+<section id="contact">
+  <h2>Contact Me</h2>
+  <form id="contact-form" novalidate>
+    <label for="name">Name</label>
+    <input type="text" id="name" placeholder="Your name" required />
+    <label for="email">Email</label>
+    <input type="email" id="email" placeholder="Your email" required />
+    <label for="message">Message</label>
+    <textarea id="message" rows="5" placeholder="Write your message here" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+  <p id="form-msg" role="alert" style="margin-top:12px; color:green; display:none;"></p>
 
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <form action="mailto:your-email@example.com" method="post" enctype="text/plain">
-      <label for="name">Name:</label><br>
-      <input type="text" id="name" name="name" required><br><br>
+  <!-- Added contact details below -->
+  <div id="contact-details" style="margin-top: 25px; font-size: 1.1rem; color: #444; line-height: 1.6;">
+    <p><strong>Phone:</strong> +91 9361922024</p>
+    <p><strong>Email:</strong> <a href="mailto:monesh01108@gmail.com" style="color:#3498db; text-decoration:none;">monesh01108@gmail.com</a></p>
+    <p><strong>Location:</strong> Chennai, India</p>
+    <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/monesh-s-216709324" target="_blank" rel="noopener" style="color:#3498db; text-decoration:none;">www.linkedin.com/in/monesh-s-216709324</a></p>
+  </div>
+</section>
 
-      <label for="email">Email:</label><br>
-      <input type="email" id="email" name="email" required><br><br>
-
-      <label for="message">Message:</label><br>
-      <textarea id="message" name="message" rows="5" required></textarea><br><br>
-
-      <button type="submit">Send</button>
-    </form>
-  </section>
 
   <footer>
     &copy; 2025 Monesh. All rights reserved.
   </footer>
+
+  <script>
+    const certificates = [
+      "NPTEL - Python for Data Science (83% score)",
+      "Udemy - Machine Learning and Deep Learning using Python and R",
+      "Oracle DBMS - Professional certification (80% score)",
+      "Data Structure basic using C",
+      "CISCO - CCNA Cybersecurity & switching/routing"
+    ];
+    const certList = document.getElementById('cert-list');
+    certificates.forEach(cert => {
+      const li = document.createElement('li');
+      li.textContent = cert;
+      certList.appendChild(li);
+    });
+
+    const form = document.getElementById('contact-form');
+    const formMsg = document.getElementById('form-msg');
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = form.name.value.trim();
+      const email = form.email.value.trim();
+      const message = form.message.value.trim();
+      if(!name || !email || !message) {
+        formMsg.style.color = 'red';
+        formMsg.textContent = 'Please fill out all fields.';
+        formMsg.style.display = 'block';
+        return;
+      }
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if(!emailRegex.test(email)) {
+        formMsg.style.color = 'red';
+        formMsg.textContent = 'Please enter a valid email address.';
+        formMsg.style.display = 'block';
+        return;
+      }
+      formMsg.style.color = 'green';
+      formMsg.textContent = `Thank you, ${name}! Your message has been sent.`;
+      formMsg.style.display = 'block';
+      form.reset();
+    });
+
+    // Load text files for confusion matrices
+    async function loadText(id, url) {
+      try {
+        const response = await fetch(url);
+        const text = await response.text();
+        document.getElementById(id).textContent = text;
+      } catch (error) {
+        document.getElementById(id).textContent = "Unable to load file.";
+      }
+    }
+
+    // Replace 'your-username' and 'your-repo' below:
+    loadText("knn-matrix", "https://raw.githubusercontent.com/Monesh01/Monesh01.github.io/main/confusion_matrices/confusion_matrix_knn.txt");
+    loadText("logreg-matrix", "https://raw.githubusercontent.com/Monesh01/Monesh01.github.io/main/confusion_matrices/confusion_matrix_log.txt");
+  </script>
 </body>
 </html>
