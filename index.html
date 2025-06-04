@@ -59,6 +59,7 @@
     li {
       margin-bottom: 8px;
     }
+    
     #skills ul {
       list-style: none;
       display: flex;
@@ -86,6 +87,19 @@
       padding-left: 0;
       margin-top: 12px;
     }
+    #extracurricular ul {
+  list-style-type: disc;
+  margin-top: 12px;
+  padding-left: 20px;
+  color: #444;
+ }
+
+  #extracurricular li {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
     #certificates li {
       background: #e8f0fe;
       border-left: 5px solid #4285f4;
@@ -121,6 +135,16 @@
       border-color: #3498db;
       outline: none;
     }
+    #education .edu-entry {
+  margin-bottom: 20px;
+}
+
+#education ul {
+  margin-top: 8px;
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
     #contact button {
       background: #3498db;
       color: white;
@@ -177,12 +201,28 @@
   </section>
 
   <section id="education">
-    <h2>Education</h2>
-    <h3>Higher Secondary Education</h3>
-    <p><strong>KSR Matric Hr Sec School, Thirupathur, Tamil Nadu, India</strong><br>Completed: 2023<br>Stream: Computer Science<br>Percentage: 93%</p>
+  <h2>Education</h2>
+
+  <div class="edu-entry">
     <h3>B.Tech in Artificial Intelligence and Data Science</h3>
-    <p><strong>SIMATS Engineering, Chennai, India</strong><br>2023 – 2027 (Pursuing)<br>CGPA: 9.17 / 10<br>Highlight: Top 5% in NPTEL “Python for Data Science” – Silver Badge<br>Domain of Interest: Data Science</p>
-  </section>
+    <p><strong>SIMATS Engineering, Chennai, India</strong></p>
+    <p><em>2023 – 2027 (Pursuing)</em></p>
+    <ul>
+      <li>CGPA: 9.17 / 10</li>
+      <li>Domain of Interest: Data Science</li>
+      <li>Top 5% in NPTEL “Python for Data Science” – Silver Badge</li>
+    </ul>
+  </div>
+
+  <div class="edu-entry">
+    <h3>Higher Secondary Education (HSC)</h3>
+    <p><strong>KSR Matric Hr Sec School, Thirupathur, Tamil Nadu, India</strong></p>
+    <p><em>Completed: 2023</em></p>
+    <ul>
+      <li>Stream: Computer Science</li>
+      <li>Percentage: 93%</li>
+    </ul>
+  </div>
 
   <section id="projects">
     <h2>Projects</h2>
@@ -213,6 +253,28 @@
     </ul>
   </section>
 
+    </section>
+  <section id="certifications">
+  <h2>Certifications</h2>
+  <ul>
+    <li>
+      <strong>Python for Data Science – NPTEL (2025):</strong> Scored 83%, Top 5%, Silver Badge
+    </li>
+    <li>
+      <strong>Machine Learning and Deep Learning using R and Python – Udemy (2025)</strong>
+    </li>
+    <li>
+      <strong>DBMS Professional Certification – Oracle (2024):</strong> Scored 80%
+    </li>
+    <li>
+      <strong>CCNA Cybersecurity & Switching/Routing – Cisco (2024)</strong>
+    </li>
+    <li>
+      <strong>Data Structure Basics using C – Udemy (2023)</strong>
+    </li>
+  </ul>
+</section>
+  
   <section id="skills">
   <h2>Skills</h2>
   <ul>
@@ -240,6 +302,16 @@
     <h2>Certificates</h2>
     <ul id="cert-list"></ul>
   </section>
+  <section id="extracurricular">
+  <h2>Extracurricular Activities</h2>
+  <ul>
+    <li>Active player in the University Cricket Team, consistently participating in competitive matches and training sessions.</li>
+    <li>Represented SIMATS in Inter-University and Inter-Engineering College level cricket tournaments.</li>
+    <li>Selected and played in TNCA – South Zone Cricket Tournaments.</li>
+    <li>Appreciated for exceptional sportsmanship, on-field performance, and strong team coordination.</li>
+  </ul>
+</section>
+
 <section id="contact">
   <h2>Contact Me</h2>
   <form id="contact-form" novalidate>
