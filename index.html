@@ -6,6 +6,63 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Monesh's Portfolio</title>
   <style>
+    .cert-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 300px;
+  width: 100%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  cursor: default;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeBounceIn 0.8s forwards ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cert-card h3 {
+  font-size: 1.1rem;
+  color: #121212;
+  margin-bottom: 18px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.cert-card img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.cert-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.25);
+}
+
+.cert-card:hover img {
+  transform: scale(1.08);
+}
+
+@keyframes fadeBounceIn {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-10px) scale(1.02);
+  }
+  80% {
+    transform: translateY(5px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
     * {
       margin: 0; padding: 0; box-sizing: border-box;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -271,10 +328,13 @@
     </ul>
   </section>
     
-    <section id="certificates">
-    <h2>Certificates</h2>
-    <ul id="cert-list"></ul>
-  </section>
+    <section id="certificates" style="padding: 40px 20px; background: #f9f9f9;">
+  <h2 style="text-align: center; font-size: 2.5em; margin-bottom: 40px; color: #121212;">🎓 Certificates</h2>
+  <div id="cert-container" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px;">
+    <!-- Certificates will be dynamically inserted here -->
+  </div>
+</section>
+  
     
   <section id="skills">
   <h2>Skills</h2>
@@ -338,18 +398,48 @@
 
   <script>
     const certificates = [
-      "NPTEL - Python for Data Science (83% score)",
-      "Udemy - Machine Learning and Deep Learning using Python and R",
-      "Oracle DBMS - Professional certification (80% score)",
-      "Data Structure basic using C",
-      "CISCO - CCNA Cybersecurity & switching/routing"
-    ];
-    const certList = document.getElementById('cert-list');
-    certificates.forEach(cert => {
-      const li = document.createElement('li');
-      li.textContent = cert;
-      certList.appendChild(li);
-    });
+  {
+    name: "NPTEL - Python for Data Science (83% score)",
+    img: "https://monesh01.github.io/certificates/nptel_python.png"
+  },
+  {
+    name: "Udemy - Machine Learning and Deep Learning using Python and R",
+    img: "https://monesh01.github.io/certificates/udemy_ml.jpg"
+  },
+  {
+    name: "Oracle DBMS - Professional certification (80% score)",
+    img: "https://monesh01.github.io/certificates/oracle_dbms.png"
+  },
+  {
+    name: "Data Structure basic using C",
+    img: "https://monesh01.github.io/certificates/ds_c.png"
+  },
+  {
+    name: "CISCO - CCNA Cybersecurity & switching/routing",
+    img: "https://monesh01.github.io/certificates/cisco_ccna.jpg"
+  }
+];
+
+const container = document.getElementById('cert-container');
+
+certificates.forEach((cert, i) => {
+  const card = document.createElement('div');
+  card.className = 'cert-card';
+
+  const title = document.createElement('h3');
+  title.textContent = cert.name;
+  card.appendChild(title);
+
+  const img = document.createElement('img');
+  img.src = cert.img;
+  img.alt = cert.name;
+  card.appendChild(img);
+
+  card.style.animationDelay = `${0.15 * (i + 1)}s`;
+
+  container.appendChild(card);
+});
+
 
     const form = document.getElementById('contact-form');
     const formMsg = document.getElementById('form-msg');
