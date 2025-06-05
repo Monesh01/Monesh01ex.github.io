@@ -1,72 +1,18 @@
 
-<!DOCTYPE html>
-<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Monesh's Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Montserrat:wght@600&display=swap" rel="stylesheet" />
   <style>
-    .cert-card {
-  background: #fff;
-  border-radius: 12px;
-  padding: 20px;
-  max-width: 300px;
-  width: 100%;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  cursor: default;
-  opacity: 0;
-  transform: translateY(40px);
-  animation: fadeBounceIn 0.8s forwards ease;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.cert-card h3 {
-  font-size: 1.1rem;
-  color: #121212;
-  margin-bottom: 18px;
-  text-align: center;
-  font-weight: 600;
-}
-
-.cert-card img {
-  width: 100%;
-  border-radius: 10px;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.cert-card:hover {
-  transform: translateY(-10px) scale(1.05);
-  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.25);
-}
-
-.cert-card:hover img {
-  transform: scale(1.08);
-}
-
-@keyframes fadeBounceIn {
-  0% {
-    opacity: 0;
-    transform: translateY(40px) scale(0.95);
-  }
-  60% {
-    opacity: 1;
-    transform: translateY(-10px) scale(1.02);
-  }
-  80% {
-    transform: translateY(5px) scale(0.98);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
+    /* Fonts setup */
     * {
-      margin: 0; padding: 0; box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0; 
+      padding: 0; 
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif; /* Default font for all elements */
     }
+
     body {
       background: #f5f7fa;
       color: #333;
@@ -74,26 +20,36 @@
       padding: 20px;
       max-width: 900px;
       margin: auto;
+      font-family: 'Poppins', sans-serif;
     }
+
     h1, h2, h3 {
+      font-family: 'Montserrat', sans-serif; /* Stylish font for headers */
+      font-weight: 600;
       color: #222;
       margin-bottom: 10px;
     }
+
     header {
       text-align: center;
       padding-bottom: 30px;
     }
+
     header h1 {
+      font-family: 'Montserrat', sans-serif; /* Font for your name */
       font-size: 3rem;
       margin-bottom: 8px;
       color: #2c3e50;
       letter-spacing: 2px;
+      font-weight: 600;
     }
+
     header p {
       font-size: 1.2rem;
       color: #555;
       font-style: italic;
     }
+
     section {
       background: white;
       padding: 25px 30px;
@@ -102,22 +58,26 @@
       margin-bottom: 30px;
       transition: box-shadow 0.3s ease;
     }
+
     section:hover {
       box-shadow: 0 8px 20px rgb(0 0 0 / 0.15);
     }
+
     p, ul, li {
       font-size: 1.1rem;
       color: #444;
       line-height: 1.6;
     }
+
     ul {
       padding-left: 20px;
       margin-top: 10px;
     }
+
     li {
       margin-bottom: 8px;
     }
-    
+
     #skills ul {
       list-style: none;
       display: flex;
@@ -126,6 +86,7 @@
       padding-left: 0;
       margin-top: 12px;
     }
+
     #skills li {
       background: #3498db;
       color: white;
@@ -137,26 +98,16 @@
       cursor: default;
       transition: background-color 0.3s ease;
     }
+
     #skills li:hover {
       background: #2980b9;
     }
+
     #certificates ul {
       list-style: none;
       padding-left: 0;
       margin-top: 12px;
     }
-    #extracurricular ul {
-  list-style-type: disc;
-  margin-top: 12px;
-  padding-left: 20px;
-  color: #444;
- }
-
-  #extracurricular li {
-    margin-bottom: 10px;
-    font-size: 1.1rem;
-    line-height: 1.6;
-  }
 
     #certificates li {
       background: #e8f0fe;
@@ -169,18 +120,35 @@
       cursor: default;
       transition: background-color 0.25s ease;
     }
+
     #certificates li:hover {
       background-color: #d2e3fc;
     }
+
+    #extracurricular ul {
+      list-style-type: disc;
+      margin-top: 12px;
+      padding-left: 20px;
+      color: #444;
+    }
+
+    #extracurricular li {
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
     #contact form {
       display: flex;
       flex-direction: column;
       gap: 15px;
     }
+
     #contact label {
       font-weight: 600;
       color: #222;
     }
+
     #contact input, #contact textarea {
       padding: 10px;
       border: 2px solid #ccc;
@@ -189,19 +157,11 @@
       resize: vertical;
       transition: border-color 0.3s ease;
     }
+
     #contact input:focus, #contact textarea:focus {
       border-color: #3498db;
       outline: none;
     }
-    #education .edu-entry {
-  margin-bottom: 20px;
-}
-
-#education ul {
-  margin-top: 8px;
-  padding-left: 20px;
-  list-style-type: disc;
-}
 
     #contact button {
       background: #3498db;
@@ -214,9 +174,11 @@
       transition: background-color 0.3s ease;
       font-size: 1.1rem;
     }
+
     #contact button:hover {
       background: #2980b9;
     }
+
     footer {
       text-align: center;
       font-size: 0.9rem;
@@ -224,6 +186,7 @@
       margin-top: 40px;
       user-select: none;
     }
+
     pre {
       background: #f4f6f9;
       padding: 15px;
@@ -232,6 +195,7 @@
       overflow-x: auto;
       margin-bottom: 10px;
     }
+
     @media (max-width: 600px) {
       body {
         padding: 15px;
@@ -240,8 +204,67 @@
         font-size: 2.2rem;
       }
     }
+
+    /* Certificate card animation and style */
+    .cert-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      max-width: 300px;
+      width: 100%;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      cursor: default;
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeBounceIn 0.8s forwards ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .cert-card h3 {
+      font-size: 1.1rem;
+      color: #121212;
+      margin-bottom: 18px;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    .cert-card img {
+      width: 100%;
+      border-radius: 10px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .cert-card:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 25px 45px rgba(0, 0, 0, 0.25);
+    }
+
+    .cert-card:hover img {
+      transform: scale(1.08);
+    }
+
+    @keyframes fadeBounceIn {
+      0% {
+        opacity: 0;
+        transform: translateY(40px) scale(0.95);
+      }
+      60% {
+        opacity: 1;
+        transform: translateY(-10px) scale(1.02);
+      }
+      80% {
+        transform: translateY(5px) scale(0.98);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
   </style>
 </head>
+
 <body>
   <header style="display: flex; align-items: center; gap: 15px; margin-bottom: 30px;">
   <img 
